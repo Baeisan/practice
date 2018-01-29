@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/css/magnific-popup.css" type="text/css" />
+  <link rel="stylesheet" href="/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Home - Full Screen Image | Canvas</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+
+<div class="sector-1">
+  <img src="/images/miro-searchform2.png" alt="Norway" style="width:100%;">
+
+
+
+  <!-- <div class="c" name="canvas"><button onClick='init();'>작동</button></div> -->
+</div>
+
+	</div><!-- #wrapper end -->
+	<canvas id="canvasss" width="1000" height="1000" style="border:1px solid #000000;">
+	Your browser does not support the HTML5 canvas tag.
+	</canvas>
+
+
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+
+
+	<script>
+	(function(){
+
+	    function init(){
+	        var canvas = document.getElementsByTagName('canvas')[0];
+	        var c = canvas.getContext('2d');
+
+	        c.fillStyle = 'hsl(25,100%,25%)';
+	        c.font = 'normal bold 2em "Lucida Console"';
+
+	        var text = '당신과 지나는 미로.';
+	        var i=1;
+
+	        function draw(){
+	            c.fillText(text.substr(0,i),100*i,400);
+	            i++;
+	            if(i < text.length){
+	                requestAnimationFrame(draw);
+	            }
+	        }
+
+	        requestAnimationFrame(draw);
+
+	    }
+
+	//invoke function init once document is fully loaded
+	    window.addEventListener('load',init,false);
+
+	}()); //self invoking function
+	</script>
+
+
+</body>
+</html>
